@@ -4,10 +4,34 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>picklego-web</title>
+
+    <title>PickleGo | Find Pickleball Matches Nearby</title>
+    <meta
+      name="description"
+      content="PickleGo helps pickleball players find nearby matches, join games, create sessions, coordinate in chat, and discover courts faster."
+    />
+    <link rel="canonical" href="https://picklego.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PickleGo" />
+    <meta property="og:title" content="PickleGo | Find Pickleball Matches Nearby" />
+    <meta
+      property="og:description"
+      content="Find matches, meet players, and play more with PickleGo's local pickleball community experience."
+    />
+    <meta property="og:url" content="https://picklego.app/" />
+    <meta property="og:image" content="https://picklego.app/picklego-screens/other-promo-imgs/picklego-promo-banner.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PickleGo | Find Pickleball Matches Nearby" />
+    <meta
+      name="twitter:description"
+      content="Create matches, join sessions, and coordinate with players through PickleGo."
+    />
+    <meta name="twitter:image" content="https://picklego.app/picklego-screens/other-promo-imgs/picklego-promo-banner.png" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="root"><!--ssr-outlet--></div>
+    <script type="module" src="/src/entry-client.tsx"></script>
   </body>
 </html>

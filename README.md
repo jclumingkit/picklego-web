@@ -23,6 +23,7 @@ src/
 3. Import other domains only through their public API.
 4. Avoid deep imports into another domain's internals.
 5. Promote reusable code to its own vertical (or `design-system`) instead of a catch-all `utils` folder.
+6. For the landing page, keep primary content and metadata present in `index.html` for SEO-first delivery, then enhance with client-side React.
 
 ## Path aliases
 
@@ -44,3 +45,8 @@ ESLint prevents deep imports into domain internals via `no-restricted-imports`.
 - `npm run build`
 - `npm run lint`
 - `npm run preview`
+
+## Landing SEO Notes
+
+- Required metadata lives in `index.html`: `title`, `description`, canonical, Open Graph, and Twitter card.
+- Home route content is implemented in `src/home/components/HomePage.tsx` with reusable style-role class patterns.
