@@ -24,9 +24,9 @@ export default defineConfig([
         {
           patterns: [
             {
-              group: ['@verticals/*/*/**'],
+              group: ['@home/*/**'],
               message:
-                'Do not deep-import vertical internals. Import only from a vertical public API (@verticals/<vertical>/<slice>).',
+                'Do not deep-import domain internals. Import only from a domain public API (@home).',
             },
           ],
         },

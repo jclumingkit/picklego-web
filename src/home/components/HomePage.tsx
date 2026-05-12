@@ -4,7 +4,7 @@ import viteLogo from '../assets/vite.svg'
 import heroImg from '../assets/hero.png'
 import '../styles/home.css'
 
-export function MarketingHomePage() {
+export function HomePage() {
   const [count, setCount] = useState(0)
 
   return (
@@ -18,7 +18,7 @@ export function MarketingHomePage() {
         <div>
           <h1>Get started</h1>
           <p>
-            Edit <code>src/verticals/marketing/home/components/MarketingHomePage.tsx</code> and save to test <code>HMR</code>
+            Edit <code>src/home/components/HomePage.tsx</code> and save to test <code>HMR</code>
           </p>
         </div>
         <button
