@@ -9,6 +9,8 @@
     "paths": {
       "@app": ["./src/app/index.ts"],
       "@app/*": ["./src/app/*"],
+      "@content": ["./src/content/index.ts"],
+      "@content/*": ["./src/content/*"],
       "@home": ["./src/home/index.ts"],
       "@home/*": ["./src/home/*"],
       "@design-system/*": ["./src/design-system/*"],

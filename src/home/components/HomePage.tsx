@@ -246,18 +246,28 @@ export function HomePage() {
               </div>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2">
-              {highlights.map((item, index) => (
-                <figure
-                  key={item.src}
-                  className={`phone-frame screen-wrap mx-auto max-w-[18rem] shadow-[0_24px_60px_rgba(31,48,65,0.1)] ${
-                    index === 1 ? 'sm:translate-y-10' : ''
-                  }`}
-                >
-                  <ScreenImage src={item.src} alt={item.alt} className="w-full" />
-                  <figcaption className="sr-only">{item.caption}</figcaption>
+            <div className="grid gap-5 sm:grid-cols-2 sm:items-start">
+              <div className="flex justify-center sm:translate-y-10">
+                <figure className="phone-frame screen-wrap mx-auto w-full max-w-[18rem] shadow-[0_24px_60px_rgba(31,48,65,0.1)]">
+                  <ScreenImage
+                    src={highlights[1].src}
+                    alt={highlights[1].alt}
+                    className="h-auto w-full"
+                  />
+                  <figcaption className="sr-only">{highlights[1].caption}</figcaption>
                 </figure>
-              ))}
+              </div>
+
+              <div className="flex justify-center">
+                <figure className="phone-frame screen-wrap mx-auto w-full max-w-[18rem] shadow-[0_24px_60px_rgba(31,48,65,0.1)]">
+                  <ScreenImage
+                    src={highlights[0].src}
+                    alt={highlights[0].alt}
+                    className="h-auto w-full"
+                  />
+                  <figcaption className="sr-only">{highlights[0].caption}</figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </section>
@@ -323,7 +333,7 @@ export function HomePage() {
         <div className="mx-auto flex max-w-7xl flex-col gap-4 border-t border-white/10 pt-8 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 PickleGo. All rights reserved.</p>
           <div className="flex gap-5">
-            <a href={`${APP_URL}privacy`} className="hover:text-[#d4ff00]">
+            <a href="/privacy" className="hover:text-[#d4ff00]">
               Privacy Policy
             </a>
             <a href={`${APP_URL}terms`} className="hover:text-[#d4ff00]">
