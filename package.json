@@ -10,7 +10,8 @@
     "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist/server --emptyOutDir false",
     "prerender": "node scripts/prerender.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "npm run build:client && wrangler dev",
+    "deploy": "npm run build:client && wrangler deploy"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
+    "@cloudflare/vite-plugin": "^1.37.0",
     "@eslint/js": "^10.0.1",
     "@rolldown/plugin-babel": "^0.2.3",
     "@types/babel__core": "^7.20.5",
@@ -37,6 +39,7 @@
     "globals": "^17.6.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
-    "vite": "^8.0.12"
+    "vite": "^8.0.12",
+    "wrangler": "^4.91.0"
   }
 }

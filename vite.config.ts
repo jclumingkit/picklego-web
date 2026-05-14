@@ -4,6 +4,8 @@ import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import path from "node:path";
 import { defineConfig } from "vite";
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 export default defineConfig({
   appType: "spa",
   build: {
@@ -23,5 +25,6 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
+    cloudflare()
   ],
 });
