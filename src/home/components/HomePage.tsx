@@ -1,75 +1,81 @@
-import '../styles/home.css'
+import "../styles/home.css";
 
-const APP_URL = 'https://picklego.app/'
+const APP_URL = "https://picklego.app/";
 const PLAY_STORE_URL =
-  'https://play.google.com/store/apps/details?id=com.jaycee2426.pickleballmatchfinder'
+  "https://play.google.com/store/apps/details?id=com.jaycee2426.pickleballmatchfinder";
 
 const styleRole = {
   primaryCta:
-    'inline-flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#d4ff00] to-[#b8de00] px-7 py-4 text-sm font-black uppercase tracking-[0.18em] text-[#1f3041] shadow-[0_0_36px_rgba(212,255,0,0.45)] transition hover:scale-[1.01]',
+    "inline-flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#d4ff00] to-[#b8de00] px-7 py-4 text-sm font-black uppercase tracking-[0.18em] text-[#1f3041] shadow-[0_0_36px_rgba(212,255,0,0.45)] transition hover:scale-[1.01]",
   secondaryCta:
-    'inline-flex items-center justify-center rounded-2xl bg-[#d9eaff] px-7 py-4 text-sm font-black uppercase tracking-[0.18em] text-[#1f3041] transition hover:bg-[#cfe5ff]',
-  sectionLabel:
-    'text-sm font-black uppercase tracking-[0.2em] text-[#4c5d70]',
+    "inline-flex items-center justify-center rounded-2xl bg-[#d9eaff] px-7 py-4 text-sm font-black uppercase tracking-[0.18em] text-[#1f3041] transition hover:bg-[#cfe5ff]",
+  sectionLabel: "text-sm font-black uppercase tracking-[0.2em] text-[#4c5d70]",
   sectionLabelOnDark:
-    'text-sm font-black uppercase tracking-[0.2em] text-[#d4ff00]',
-  card:
-    'rounded-[2rem] bg-white p-7 shadow-[0_24px_60px_rgba(31,48,65,0.1)]',
-} as const
+    "text-sm font-black uppercase tracking-[0.2em] text-[#d4ff00]",
+  card: "rounded-[2rem] bg-white p-7 shadow-[0_24px_60px_rgba(31,48,65,0.1)]",
+} as const;
 
 const featureCards = [
   {
-    tag: 'Find',
-    title: 'Nearby matches',
-    copy: 'Browse games around you, filter by skill level, and see open slots before joining.',
+    tag: "Find",
+    title: "Nearby matches",
+    copy: "Browse games around you, filter by skill level, and see open slots before joining.",
     muted: true,
   },
   {
-    tag: 'Host',
-    title: 'Create a match',
-    copy: 'Set the court, time, skill level, and number of players. PickleGo helps players find your game.',
+    tag: "Host",
+    title: "Create a match",
+    copy: "Set the court, time, skill level, and number of players. PickleGo helps players find your game.",
     muted: false,
   },
   {
-    tag: 'Chat',
-    title: 'Coordinate fast',
-    copy: 'Use in-match chat to confirm details, update players, and keep everyone in the loop.',
+    tag: "Chat",
+    title: "Coordinate fast",
+    copy: "Use in-match chat to confirm details, update players, and keep everyone in the loop.",
     muted: true,
   },
-]
+];
 
 const promoEntries = [
-  { label: 'Join a match', points: '+1', dark: false },
-  { label: 'Create a match', points: '+1', dark: false },
-  { label: 'Attend a match', points: '+1', dark: false },
-  { label: 'Host a full match', points: '+3', dark: true },
-]
+  { label: "Join a match", points: "+1", dark: false },
+  { label: "Create a match", points: "+1", dark: false },
+  { label: "Attend a match", points: "+1", dark: false },
+  { label: "Host a full match", points: "+3", dark: true },
+];
 
 const showcaseScreens = [
   {
-    src: '/picklego-screens/explore_matches_screen.png',
-    alt: 'PickleGo nearby matches screen showing open games around the player.',
+    src: "/picklego-screens/explore_matches_screen.png",
+    alt: "PickleGo nearby matches screen showing open games around the player.",
   },
   {
-    src: '/picklego-screens/match_details_creator_view.png',
-    alt: 'PickleGo match details screen for hosts managing game setup and player slots.',
+    src: "/picklego-screens/match_details_creator_view.png",
+    alt: "PickleGo match details screen for hosts managing game setup and player slots.",
   },
-]
+];
 
 const highlights = [
   {
-    src: '/picklego-screens/create_match_screen.png',
-    alt: 'Create match screen where players set schedule, court, and skill level.',
-    caption: 'Create match flow',
+    src: "/picklego-screens/create_match_screen.png",
+    alt: "Create match screen where players set schedule, court, and skill level.",
+    caption: "Create match flow",
   },
   {
-    src: '/picklego-screens/match_channel_screen.png',
-    alt: 'In-match chat channel used by players to coordinate logistics quickly.',
-    caption: 'Match chat flow',
+    src: "/picklego-screens/match_channel_screen.png",
+    alt: "In-match chat channel used by players to coordinate logistics quickly.",
+    caption: "Match chat flow",
   },
-]
+];
 
-function ScreenImage({ src, alt, className }: { src: string; alt: string; className?: string }) {
+function ScreenImage({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
   return (
     <img
       src={src}
@@ -77,10 +83,12 @@ function ScreenImage({ src, alt, className }: { src: string; alt: string; classN
       loading="lazy"
       className={className}
       onError={(event) => {
-        event.currentTarget.closest('.screen-wrap')?.classList.add('screen-missing')
+        event.currentTarget
+          .closest(".screen-wrap")
+          ?.classList.add("screen-missing");
       }}
     />
-  )
+  );
 }
 
 export function HomePage() {
@@ -92,17 +100,26 @@ export function HomePage() {
           <div className="absolute right-[-12rem] top-[-10rem] -z-10 h-[34rem] w-[34rem] rounded-full bg-[#d4ff00] opacity-40 blur-3xl"></div>
           <div className="absolute bottom-[-12rem] left-[-10rem] -z-10 h-[30rem] w-[30rem] rounded-full bg-[#cfe5ff] opacity-80 blur-3xl"></div>
 
-          <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
-            <a href="#" className="flex items-center gap-3" aria-label="PickleGo home">
+          <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8 flex-wrap gap-8 xs:gap-2">
+            <a
+              href="#"
+              className="flex items-center gap-3"
+              aria-label="PickleGo home"
+            >
               <img
                 src="/icon.png"
                 alt="PickleGo logo mark"
                 className="h-11 w-11 rounded-2xl object-cover shadow-[0_0_36px_rgba(212,255,0,0.45)]"
               />
-              <span className="text-xl font-black italic tracking-[-0.05em]">PickleGo</span>
+              <span className="text-xl font-black italic tracking-[-0.05em]">
+                PickleGo
+              </span>
             </a>
 
-            <a href={PLAY_STORE_URL} className={`${styleRole.primaryCta} hidden sm:inline-flex`}>
+            <a
+              href={PLAY_STORE_URL}
+              className={`${styleRole.primaryCta} pg-get-android-link hidden sm:inline-flex`}
+            >
               Get Android App
             </a>
           </nav>
@@ -117,12 +134,17 @@ export function HomePage() {
               </div>
 
               <h1 className="max-w-3xl text-6xl font-black uppercase italic leading-[0.88] tracking-[-0.07em] text-[#1f3041] sm:text-7xl lg:text-8xl">
-                Find matches.<br />Meet players.<br />Play more.
+                Find matches.
+                <br />
+                Meet players.
+                <br />
+                Play more.
               </h1>
 
               <p className="mt-8 max-w-xl text-lg leading-8 text-[#4c5d70]">
-                PickleGo helps local pickleball players discover nearby matches, create games,
-                coordinate in chat, and find courts without the back-and-forth.
+                PickleGo helps local pickleball players discover nearby matches,
+                create games, coordinate in chat, and find courts without the
+                back-and-forth.
               </p>
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -135,7 +157,7 @@ export function HomePage() {
               </div>
 
               <div className="mt-9 grid max-w-lg grid-cols-3 gap-3">
-                {['Create', 'Join', 'Chat'].map((label, index) => (
+                {["Create", "Join", "Chat"].map((label, index) => (
                   <div key={label} className={styleRole.card}>
                     <div className="text-3xl font-black tracking-[-0.05em]">{`0${index + 1}`}</div>
                     <div className="mt-1 text-xs font-extrabold uppercase tracking-[0.16em] text-[#4c5d70]">
@@ -151,10 +173,18 @@ export function HomePage() {
               <div className="absolute right-3 top-4 h-[30rem] w-[20rem] rotate-6 rounded-[3rem] bg-[#1f3041] opacity-10"></div>
 
               <div className="phone-frame screen-wrap absolute left-2 top-12 w-[43%] -rotate-6 shadow-[0_24px_60px_rgba(31,48,65,0.1)] sm:left-10 lg:left-8 lg:top-20">
-                <ScreenImage src={showcaseScreens[0].src} alt={showcaseScreens[0].alt} className="w-full" />
+                <ScreenImage
+                  src={showcaseScreens[0].src}
+                  alt={showcaseScreens[0].alt}
+                  className="w-full"
+                />
               </div>
               <div className="phone-frame screen-wrap absolute right-2 top-0 w-[47%] rotate-3 shadow-[0_24px_60px_rgba(31,48,65,0.1)] sm:right-12 lg:right-10">
-                <ScreenImage src={showcaseScreens[1].src} alt={showcaseScreens[1].alt} className="w-full" />
+                <ScreenImage
+                  src={showcaseScreens[1].src}
+                  alt={showcaseScreens[1].alt}
+                  className="w-full"
+                />
               </div>
               <div className="absolute bottom-8 left-1/2 w-[70%] -translate-x-1/2 rounded-[2.25rem] bg-white/80 p-4 shadow-[0_24px_60px_rgba(31,48,65,0.1)] backdrop-blur-md sm:w-[58%]">
                 <div className="flex items-center justify-between gap-4">
@@ -162,7 +192,9 @@ export function HomePage() {
                     <p className="text-xs font-black uppercase tracking-[0.18em] text-[#4c5d70]">
                       Live Match Pulse
                     </p>
-                    <p className="mt-1 text-2xl font-black tracking-[-0.05em]">3 / 4 Players</p>
+                    <p className="mt-1 text-2xl font-black tracking-[-0.05em]">
+                      3 / 4 Players
+                    </p>
                   </div>
                   <div className="grid h-14 w-14 place-items-center rounded-2xl bg-[#d4ff00] text-2xl font-black text-[#1f3041]">
                     +
@@ -176,10 +208,15 @@ export function HomePage() {
           </div>
         </section>
 
-        <section id="how-it-works" className="bg-[#1f3041] px-6 py-20 text-white lg:px-8">
+        <section
+          id="how-it-works"
+          className="bg-[#1f3041] px-6 py-20 text-white lg:px-8"
+        >
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className={styleRole.sectionLabelOnDark}>Built for the local court loop</p>
+              <p className={styleRole.sectionLabelOnDark}>
+                Built for the local court loop
+              </p>
               <h2 className="mt-4 text-4xl font-black uppercase italic leading-[0.95] tracking-[-0.06em] sm:text-6xl">
                 Less planning. More playing.
               </h2>
@@ -190,18 +227,26 @@ export function HomePage() {
                 <div
                   key={card.tag}
                   className={`rounded-[2rem] p-7 ${
-                    card.muted ? 'bg-white/10 backdrop-blur-md' : 'bg-white text-[#1f3041]'
+                    card.muted
+                      ? "bg-white/10 backdrop-blur-md"
+                      : "bg-white text-[#1f3041]"
                   }`}
                 >
                   <div
                     className={`mb-8 inline-flex rounded-2xl px-3 py-2 text-xs font-black uppercase tracking-[0.16em] ${
-                      card.muted ? 'bg-[#d4ff00] text-[#1f3041]' : 'bg-[#d9eaff] text-[#1f3041]'
+                      card.muted
+                        ? "bg-[#d4ff00] text-[#1f3041]"
+                        : "bg-[#d9eaff] text-[#1f3041]"
                     }`}
                   >
                     {card.tag}
                   </div>
-                  <h3 className="text-2xl font-black tracking-[-0.04em]">{card.title}</h3>
-                  <p className={`mt-4 text-sm leading-7 ${card.muted ? 'text-white/70' : 'text-[#4c5d70]'}`}>
+                  <h3 className="text-2xl font-black tracking-[-0.04em]">
+                    {card.title}
+                  </h3>
+                  <p
+                    className={`mt-4 text-sm leading-7 ${card.muted ? "text-white/70" : "text-[#4c5d70]"}`}
+                  >
                     {card.copy}
                   </p>
                 </div>
@@ -220,8 +265,8 @@ export function HomePage() {
                   Play more. Earn entries.
                 </h2>
                 <p className="mt-6 text-[#4c5d70]">
-                  During launch, active users can earn raffle entries by joining, creating, and
-                  attending matches.
+                  During launch, active users can earn raffle entries by
+                  joining, creating, and attending matches.
                 </p>
               </div>
 
@@ -230,13 +275,17 @@ export function HomePage() {
                   <div
                     key={entry.label}
                     className={`flex items-center justify-between rounded-2xl px-5 py-4 ${
-                      entry.dark ? 'bg-[#1f3041] text-white' : 'bg-white text-[#1f3041]'
+                      entry.dark
+                        ? "bg-[#1f3041] text-white"
+                        : "bg-white text-[#1f3041]"
                     }`}
                   >
                     <span className="font-bold">{entry.label}</span>
                     <span
                       className={`rounded-full px-3 py-1 text-sm font-black ${
-                        entry.dark ? 'bg-[#d4ff00] text-[#1f3041]' : 'bg-[#d4ff00] text-[#1f3041]'
+                        entry.dark
+                          ? "bg-[#d4ff00] text-[#1f3041]"
+                          : "bg-[#d4ff00] text-[#1f3041]"
                       }`}
                     >
                       {entry.points}
@@ -254,7 +303,9 @@ export function HomePage() {
                     alt={highlights[1].alt}
                     className="h-auto w-full"
                   />
-                  <figcaption className="sr-only">{highlights[1].caption}</figcaption>
+                  <figcaption className="sr-only">
+                    {highlights[1].caption}
+                  </figcaption>
                 </figure>
               </div>
 
@@ -265,7 +316,9 @@ export function HomePage() {
                     alt={highlights[0].alt}
                     className="h-auto w-full"
                   />
-                  <figcaption className="sr-only">{highlights[0].caption}</figcaption>
+                  <figcaption className="sr-only">
+                    {highlights[0].caption}
+                  </figcaption>
                 </figure>
               </div>
             </div>
@@ -281,8 +334,9 @@ export function HomePage() {
                   Know where you&apos;re going.
                 </h2>
                 <p className="mt-6 max-w-xl text-[#4c5d70]">
-                  Search courts, check directions, and coordinate with the players joining your
-                  match. PickleGo keeps court discovery and match planning in one flow.
+                  Search courts, check directions, and coordinate with the
+                  players joining your match. PickleGo keeps court discovery and
+                  match planning in one flow.
                 </p>
               </div>
               <div className="screen-wrap rounded-[2.5rem] bg-white p-5 shadow-[0_24px_60px_rgba(31,48,65,0.1)]">
@@ -305,10 +359,13 @@ export function HomePage() {
                 Your next match is closer than you think.
               </h2>
               <p className="mt-6 max-w-xl text-white/70">
-                Available first on Android through Google Play. Tap the button to download and get
-                into your next local game.
+                Available first on Android through Google Play. Tap the button
+                to download and get into your next local game.
               </p>
-              <a href={PLAY_STORE_URL} className={`${styleRole.primaryCta} mt-9`}>
+              <a
+                href={PLAY_STORE_URL}
+                className={`${styleRole.primaryCta} mt-9`}
+              >
                 Open Play Store
               </a>
             </div>
@@ -346,5 +403,5 @@ export function HomePage() {
         </div>
       </footer>
     </>
-  )
+  );
 }
